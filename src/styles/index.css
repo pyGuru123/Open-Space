@@ -5,48 +5,6 @@ body, html {
 	padding: 0;
 }
 
-.header {
-	width: 100%;
-	height: 100px;
-	background-color: rgb(21, 21, 21);
-	user-select: none;
-}
-
-.hleft {
-	width: 25%;
-	height: inherit;
-	float: left;
-}
-
-.logo {
-	padding: 10px 10px;
-}
-
-.hright {
-	width: 75%;
-	height: inherit;
-	float: left;
-	padding-left: 50px;
-	box-sizing: border-box;
-}
-
-.hright > span {
-	margin-top: 20px;
-	padding: 20px;
-	color: #d9d9d9;
-	display: inline-block;
-	cursor: pointer;
-	line-height: 10px;
-	font-size: 23px;
-	font-family: 'Open Sans', sans-serif;
-	border-radius: 4px;
-}
-
-.hright > span:hover {
-	background-color: rgb(32, 32, 32);
-	color: #fff;
-}
-
 .body {
 	width: 100%;
 	height: 500px;
@@ -63,112 +21,57 @@ body, html {
 	width: 60%;
 	height: inherit;
 	float: left;
-	/*background-color: cornflowerblue;*/
 }
 
-.scene {
-	position: relative;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	width: 300px;
-	height: 300px;
-	background: #3b93ff;
-	border: 20px solid rgb(21, 21, 21);
-	border-radius: 50%;
-	overflow: hidden;
-	animation: animateScene 5s linear infinite;
-	box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
+.infobox {
+	margin: 0;
+	padding: 35px 10px;
+	box-sizing: border-box;
 }
 
-.scene:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,0.3);
-	z-index: 1;
+.infobox > h2 {
+	color: #000;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 32px;
+	display: inline-block;
+	padding: 10px;
+	margin: 0;
+	user-select: none;
+	box-sizing: border-box;
 }
 
-.fa-rocket {
-	position: absolute;
-	top: 50%;
-	left: 47.4%;
-	transform:  translate(-50%, -50%) rotate(-45deg);
-	color: #fff;
-	font-size: 8em !important;
-	animation: animateRocket .2s linear infinite;
-	text-shadow: -10px 15px 10px rgba(0,0,0,0.2);
+.infobox > h2:hover {
+	color: #764abc;
+	border-radius: 15px;
+	transition: all 0.5s;
+	border: 2px solid #764abc;
+	text-decoration: none;
 }
 
-.cloud {
-	position: absolute;
-	color: #ccc;
-	animation: animateCloud 1s linear infinite;
+.infobox > p {
+	padding: 0px 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 550;
+	word-wrap: break-word;
+	word-spacing: 2px;
 }
 
-.cloud1 {
-	left: 10%;
-	font-size: 4em;
+ul {
+	color: rgb(32, 32, 32);
+	padding: 5px 35px;
 }
 
-.cloud2 {
-	top: -20px;
-	left: 45%;
-	font-size: 4em;
-	z-index: -1;
-	animation-delay: 0.8s;
+li {
+	float: left;
+	clear: both;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 550;
+	text-decoration: none;
+	text-shadow: 0.1px 0.1px #7A7979;
 }
 
-.cloud3 {
-	right: 20%;
-	font-size: 3em;
-	animation-delay: 0.4s;
-}
-
-@keyframes animateRocket {
-	0%
-	{
-		transform: translate(-50%,-50%) rotate(-45deg) translate(0,0);
-	}
-	50%
-	{
-		transform: translate(-50%,-50%) rotate(-45deg) translate(-5px,5px);
-	}
-	100%
-	{
-		transform: translate(-50%,-50%) rotate(-45deg) translate(0,0);
-	}
-}
-
-@keyframes animateCloud {
-	0%
-	{
-		transform: translateY(-100%);
-	}
-	100%
-	{
-		transform: translateY(1000%);
-	}
-}
-
-@keyframes animateScene {
-	0%
-	{
-		background: #b339ff;
-	}
-	50%
-	{
-		background: #3b93ff;
-	}
-	70%
-	{
-		background: #3b93ff;
-	}
-	100%
-	{
-		background: #b339ff;
-	}
+li:hover {
+	cursor: pointer;
 }

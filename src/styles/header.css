@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Open+Sans&display=swap');
+
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	width: 100%;
+	height: 100px;
+	background-color: rgb(21, 21, 21);
+	user-select: none;
+}
+
+.hleft {
+	width: 25%;
+	height: inherit;
+	float: left;
+}
+
+.logo {
+	padding: 10px 10px;
+}
+
+.logo:hover {
+	transform: scale(1.1);
+	transition: all 1s;
+}
+
+.hright {
+	width: 75%;
+	height: inherit;
+	float: left;
+	padding-left: 50px;
+	box-sizing: border-box;
+}
+
+.hright > span {
+	margin-top: 20px;
+	padding: 20px;
+	color: #d9d9d9;
+	display: inline-block;
+	cursor: pointer;
+	line-height: 10px;
+	font-size: 23px;
+	font-family: 'Open Sans', sans-serif;
+	border-radius: 4px;
+}
+
+.hright > span:hover {
+	background-color: rgb(32, 32, 32);
+	color: #fff;
+	transition: all 0.5s;
+	border-radius: 10px;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #d9d9d9;
+}
+
+.active {
+	background-color: rgb(32, 32, 32);
+	color: #fff;
+	border-radius: 4px;
+}
