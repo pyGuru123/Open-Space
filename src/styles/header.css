@@ -62,5 +62,5 @@ a:link, a:visited {
 .active {
 	background-color: rgb(32, 32, 32);
 	color: #fff;
-	border-radius: 4px;
+	border-radius: 10px;
 }
