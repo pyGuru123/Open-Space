@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Open+Sans&display=swap');
+
+.astrobox, #mapbox {
+	height: 490px;
+	float: left;
+	box-sizing: border-box;
+	margin: 15px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.astrobox {
+	width: 30%;
+	padding: 10px;
+}
+
+#mapbox {
+	width: 65%;
+	border-radius: 10px;
+	box-shadow: 2px 2px 12px rgb(31,25,76);
+}
+
+.astrobox > h2 {
+	font-size: 20px;
+}
+
+.astrobox > p {
+	font-size: 18px;
+	font-weight: 550;
+	padding-left: 15px;
+	padding-bottom: 0;
+}
+
+.mapbox {
+	width: 100%;
+	height: inherit;
+}

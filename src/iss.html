@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="styles/header.css">
+	<link rel="stylesheet" type="text/css" href="styles/iss.css">
 </head>
 <body>
 	<div class="header">
@@ -21,5 +22,24 @@
 			<span><a href="opendata.html"> Open Data </a></span>
 		</div>
 	</div>
+	<div class="body">
+		<div class="astrobox"></div>
+		<div id="mapbox"></div>
+	</div>
+
+	<script type="text/javascript" src="scripts/iss.js"></script>
+	<script type="text/javascript">
+		function myMap() {
+		var mapProp= {
+		  center:new google.maps.LatLng(51.508742,-0.120850),
+		  zoom:2.5,
+		};
+		var map = new google.maps.Map(document.getElementById("mapbox"),mapProp);
+		// var latlng
+		}
+
+		console.log(map);
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD6urv6OWrtEQOHralG3H4jKorRl5MC6s&callback=myMap"></script>
 </body>
 </html>

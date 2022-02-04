@@ -38,6 +38,7 @@
 .image {
 	width: 100%;
 	height: inherit;
+	border-radius: 10px;
 }
 
 input[type='date'] {
