@@ -1,6 +1,5 @@
 const astrobox = document.querySelector('.astrobox');
 
-
 window.onload = function() {
 	getAstronautsISS();
 }
@@ -38,4 +37,20 @@ function updateMap(data) {
 	latitude = data['iss_position']['latitude'];
 	longitude = data['iss_position']['longitude'];
 	console.log(latitude,longitude, map);
+}
+
+function myMap() {
+	var mapProp = {
+	  center:new google.maps.LatLng(51.508742,-0.120850),
+	  zoom:2.5,
+	};
+
+	var marker = new google.maps.Marker({
+		position : {
+			lat: 27.7,
+			lng: 85.3
+		}
+	});
+	var map = new google.maps.Map(document.getElementById("mapbox"),mapProp);
+	// var latlng
 }
