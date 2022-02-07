@@ -1,9 +1,5 @@
 const astrobox = document.querySelector('.astrobox');
 
-window.onload = function() {
-	getAstronautsISS();
-}
-
 function getAstronautsISS() {
 	let endpoint = 'http://api.open-notify.org/astros.json'
 	fetch(endpoint)
@@ -27,6 +23,8 @@ function updateResult(data) {
 }
 
 function myMap() {
+	getAstronautsISS();
+	
 	var mapProp = {
 	  center:new google.maps.LatLng(25.31, 50.97),
 	  zoom:1.5,
@@ -47,20 +45,19 @@ function myMap() {
 
 	setInterval(function() {
 		getISSPosition(marker);
-		}, 20000);
+	}, 5000);
 }
 
 function getISSPosition(marker) {
-	let endpoint = 'http://api.open-notify.org/iss-now.json'
+	let endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 	fetch(endpoint)
 	.then(response => response.json())
 	.then(data => updateISSPosition(data, marker));
 }
 
 function updateISSPosition(data, marker) {
-	pos = data['iss_position'];
-	lat = pos['latitude'];
-	lon = pos['longitude'];
+	lat = data['latitude'];
+	lon = data['longitude'];
 	position = new google.maps.LatLng(lat,lon);
 	marker.setPosition(position);
 }
