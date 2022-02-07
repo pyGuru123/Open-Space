@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Open+Sans&display=swap');
+
+.body {
+	width: 98%;
+	margin: 10px;
+}
+
+.rovers {
+	width: 100%;
+	height: 60px;
+	padding: 10px 20px;
+	/*background-color: rgb(30, 144, 255);*/
+	background-color: rgb(32, 32, 32);
+	border: 2px solid #fff;
+	box-sizing: border-box;
+}
+
+button {
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	outline: none;
+	background-color: #e84545;
+	border: none;
+	padding: 6px;
+	width: 140px;
+	color: #fff;
+	margin-left: 10px;
+}
+
+button:hover {
+	background-color: tomato;
+}
+
+.imagebox, .config {
+	width: 50%;
+	height: 450px;
+	float: left;
+	border: 2px solid #fff;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.imagebox > img {
+	width: 100%;
+}
+
+.imagebox > img:hover {
+	transform: scale(1.1);
+	transition: all 0.5s;
+}

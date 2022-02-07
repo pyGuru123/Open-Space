@@ -7,20 +7,7 @@ function getAstronautsISS() {
 	.then(data => updateResult(data));
 }
 
-function updateResult(data) {
-	number = data['number'];
-	const astronum = document.createElement('h2');
-	astronum.innerText = `There are total of ${number} peoples on ISS`
-	astrobox.appendChild(astronum);
 
-	peoples = data['people'];
-	for (let i=0; i<peoples.length; i++) {
-		name = peoples[i]['name'];
-		const p = document.createElement('p');
-		p.innerText = `${name}`;
-		astrobox.appendChild(p);
-	}
-}
 
 function myMap() {
 	getAstronautsISS();
@@ -60,4 +47,26 @@ function updateISSPosition(data, marker) {
 	lon = data['longitude'];
 	position = new google.maps.LatLng(lat,lon);
 	marker.setPosition(position);
+
+	updateResult(data)
+}
+
+function updateResult(data) {
+	astrobox.innerText = '';
+
+	var attributes = ['latitude', 'longitude','altitude', 'velocity',
+					'visibility'];
+
+
+	const astronum = document.createElement('h2');
+	astronum.innerText = `International Space Station`
+	astrobox.appendChild(astronum);
+
+	peoples = data['people'];
+	for (const attribute of attributes) {
+		value = data[attribute];
+		const p = document.createElement('p');
+		p.innerText = `${attribute} : ${value}`;
+		astrobox.appendChild(p);
+	}
 }
