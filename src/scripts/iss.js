@@ -1,16 +1,6 @@
 const astrobox = document.querySelector('.astrobox');
 
-function getAstronautsISS() {
-	let endpoint = 'http://api.open-notify.org/astros.json'
-	fetch(endpoint)
-	.then(response => response.json())
-	.then(data => updateResult(data));
-}
-
-
-
 function myMap() {
-	getAstronautsISS();
 	
 	var mapProp = {
 	  center:new google.maps.LatLng(25.31, 50.97),
