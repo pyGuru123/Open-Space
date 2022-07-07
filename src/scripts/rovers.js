@@ -132,6 +132,7 @@ function fetchRoversImages(endpoint) {
 
 function updateResult(data){
 	var arr = data['photos'];
+	imgButtons.innerHTML = "";
 	if (arr.length > 0) {
 		var img_src = arr[0]['img_src'];
 		updateImage(img_src);
@@ -141,12 +142,17 @@ function updateResult(data){
 			var btn = document.createElement('button');
 			btn.innerHTML = `${i+1}`;
 			btn.className = 'imgindex';
-			btn.addEventListener('click', function (arr, index) {
-				console.log('clicked');
-				var img_src = arr[index]['img_src'];
-				updateImage(img_src);
-			});
+			btn.addEventListener('click', function() {
+				var img_src = arr[i]['img_src'];
+				updateImage(img_src); 
+			}, false);
 			imgButtons.appendChild(btn);
 		}
+	}
+	else {
+		var p = document.createElement("p");
+		p.innerText = "No data found for this date";
+		p.style.fontSize = "medium";
+		imgButtons.appendChild(p);
 	}
 }
