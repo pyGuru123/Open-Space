@@ -14,7 +14,7 @@ body {
 	width: 30%;
 	height: 600px;
 	float: left;
-	border: 2px solid green;
+	/*border: 2px solid green;*/
 	box-sizing: border-box;
 	overflow: hidden;
 }
@@ -34,6 +34,12 @@ body {
 .info {
 	font-family: 'Open Sans', sans-serif;
 	color: white;
+}
+
+.epicinfo {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
 }
 
 .datepick {

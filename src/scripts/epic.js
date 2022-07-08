@@ -4,20 +4,20 @@ const datepicker = document.querySelector('.datepick');
 // variable declarations;
 
 let imgarr = [];
+let index = 0;
 let apikey = "4dbQbZnGMVLS5g3SEr094513VGLJnqAjuDEMlYx3";
 
 window.onload = function() {
-	updateImage("");
-	fetchImages();
+	fetchImageData();
 }
 
 todayDate = getDate();
 datepicker.value = todayDate;
 datepicker.setAttribute('max', todayDate);
 
-datepicker.addEventListener("change", fetchImages);
+datepicker.addEventListener("change", fetchImageData);
 
-function getDate(offset=7) {
+function getDate(offset=8) {
 	var today = new Date();
 	if (offset) {
 		newdate = new Date();
@@ -30,20 +30,44 @@ function getDate(offset=7) {
 }
 
 function updateImage(src) {
-	imagery.src = "https://epic.gsfc.nasa.gov/archive/enhanced/2022/06/30/png/epic_RGB_20220630011358.png";
+	imagery.src = src;
 }
 
-function fetchImages() {
+function fetchImageData() {
 	todayDate = datepicker.value;
-	let endpoint = `https://api.nasa.gov/EPIC/api/natural/date/${todayDate}?api_key=${apikey}`;
+	let endpoint = `https://api.nasa.gov/EPIC/api/enhanced/date/${todayDate}?api_key=${apikey}`;
+	console.log(endpoint);
 
 	fetch(endpoint)
 	.then (response => response.json())
-	.then (data => printData(data))
+	.then (data => fetchImages(data, todayDate))
 }
 
-function printData(data) {
+function fetchImages(data, date) {
 	console.log(data);
+	if (data) {
+		index = 0
+		imgarr = data;
+		var imgname = imgarr[index]['image'];
+		var dates = date.split("-")
+		imgsrc = `https://epic.gsfc.nasa.gov/archive/enhanced/${dates[0]}/${dates[1]}/${dates[2]}/png/${imgname}.png`;
+		updateImage(imgsrc);
+
+		setInterval(slideshow, 8000);
+	}
+}
+
+function slideshow() {
+	index += 1;
+	console.log(index);
+	if (index >= imgarr.length) {
+		index = 0
+	}
+
+	var imgname = imgarr[index]['image'];
+	var dates = datepicker.value.split("-");
+	imgsrc = `https://epic.gsfc.nasa.gov/archive/enhanced/${dates[0]}/${dates[1]}/${dates[2]}/png/${imgname}.png`;
+	updateImage(imgsrc);
 }
 
 
