@@ -31,13 +31,14 @@ body, html {
 	width: 75%;
 	height: inherit;
 	float: left;
-	padding-left: 50px;
+	padding-left: 120px;
 	box-sizing: border-box;
 }
 
 .hright > span {
 	margin-top: 20px;
 	padding: 20px;
+	padding-right: 30px;
 	color: #d9d9d9;
 	display: inline-block;
 	cursor: pointer;
