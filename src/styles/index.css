@@ -75,3 +75,26 @@ li {
 li:hover {
 	cursor: pointer;
 }
+
+.footer {
+	background: rgb(8, 8, 8);
+	height: 150px;
+	margin-top: 20px;
+}
+
+.more {
+	color: rgb(218, 218, 218);
+	padding: 10px 15px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 550;
+	word-wrap: break-word;
+	word-spacing: 2px;
+}
+
+.about {
+	color: #764abc;
+	padding: 35px 20px 0px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+}
