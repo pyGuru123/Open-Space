@@ -17,7 +17,7 @@ datepicker.setAttribute('max', todayDate);
 
 datepicker.addEventListener("change", fetchImageData);
 
-function getDate(offset=8) {
+function getDate(offset=9) {
 	var today = new Date();
 	if (offset) {
 		newdate = new Date();
@@ -54,6 +54,9 @@ function fetchImages(data, date) {
 		updateImage(imgsrc);
 
 		setInterval(slideshow, 8000);
+	}
+	else {
+		console.log("will do it later.")
 	}
 }
 
