@@ -77,25 +77,29 @@ function updateDistance(coords) {
 	var sun_y = sun_coords['y'];
 	var sun_z = sun_coords['z'];
 	var sun_dist =  Math.sqrt(Math.pow(sun_x, 2) + Math.pow(sun_y, 2) + Math.pow(sun_z, 2));
-	var sun_dist = Math.round(sun_dist);
+	var sun_dist = numberWithCommas(Math.round(sun_dist));
 
 	var lunar_coords = coords['coords']['lunar_j2000_position'];
 	var lunar_x = lunar_coords['x'];
 	var lunar_y = lunar_coords['y'];
 	var lunar_z = lunar_coords['z'];
 	var lunar_dist =  Math.sqrt(Math.pow(lunar_x, 2) + Math.pow(lunar_y, 2) + Math.pow(lunar_z, 2));
-	var lunar_dist = Math.round(lunar_dist);
+	var lunar_dist = numberWithCommas(Math.round(lunar_dist));
 
 	var epic_coords = coords['coords']['dscovr_j2000_position'];
 	var epic_x = epic_coords['x'];
 	var epic_y = epic_coords['y'];
 	var epic_z = epic_coords['z'];
 	var epic_dist =  Math.sqrt(Math.pow(epic_x, 2) + Math.pow(epic_y, 2) + Math.pow(epic_z, 2));
-	var epic_dist = Math.round(epic_dist);
+	var epic_dist = numberWithCommas(Math.round(epic_dist));
 
 	sundistp.innerText = `Earth to Sun distance : ${sun_dist} km`
 	lunardistp.innerText = `Earth to Moon distance : ${lunar_dist} km`
 	epicdistp.innerText = `Earth to EPIC distance : ${epic_dist} km`
+}
+
+function numberWithCommas(number) {
+	 return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function slideshow() {

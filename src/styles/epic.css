@@ -50,6 +50,7 @@ body {
 	margin-top: 25px;
 	height: 180px;
 	margin-left: 20px;
+	box-shadow: 2px 2px rgb(36, 36, 36);
 }
 
 .imginfo > p {
