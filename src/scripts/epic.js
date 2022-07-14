@@ -1,15 +1,21 @@
 const imagery = document.querySelector('.imagery');
 const datepicker = document.querySelector('.datepick');
 const imgname = document.querySelector('.imgname');
+const imginfo = document.querySelector('.imginfo');
 const sundistp = document.querySelector('.sundist');
 const lunardistp = document.querySelector('.lunardist');
 const epicdistp = document.querySelector('.epicdist');
+
+imagery.style.visibility = 'hidden';
+imginfo.style.visibility = 'hidden';
+var foundData = false;
 
 // variable declarations;
 
 let imgarr = [];
 let index = 0;
 let apikey = "4dbQbZnGMVLS5g3SEr094513VGLJnqAjuDEMlYx3";
+var offset = 10;
 
 window.onload = function() {
 	fetchImageData();
@@ -48,8 +54,13 @@ function fetchImageData() {
 }
 
 function fetchImages(data, date) {
-	console.log(data);
-	if (data) {
+	if (data.length > 0) {
+		if (!foundData) {
+			imagery.style.visibility = 'visible';
+			imginfo.style.visibility = 'visible';
+			foundData = true;
+		}
+		
 		index = 0
 		imgarr = data;
 		var imgname = imgarr[index]['image'];
@@ -62,7 +73,12 @@ function fetchImages(data, date) {
 		setInterval(slideshow, 8000);
 	}
 	else {
-		console.log("will do it later.")
+		offset += 1;
+		todayDate = getDate(offset);
+		datepicker.value = todayDate;
+		datepicker.setAttribute('max', todayDate);
+
+		fetchImageData();
 	}
 }
 
